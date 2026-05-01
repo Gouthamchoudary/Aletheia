@@ -71,7 +71,7 @@ sequenceDiagram
 3. **Actionable Cartography:** Integrated mapping solutions actively pinpoint polling locations, moving beyond static text to provide real-world navigability.
 4. **Quick Action Prompts:** Anticipates user needs with predictive prompts (e.g., "Check my registration status," "Explain Proposition 4"), minimizing cognitive load.
 <img width="1239" height="805" alt="image" src="https://github.com/user-attachments/assets/bd8dd1cf-08d7-4ee1-80ee-2eeb05931a79" />
-<img width="1243" height="794" alt="image" src="https://github.com/user-attachments/assets/451d80d7-57f0-471d-b309-ec2643aa8180" />
+
 
 ---
 
@@ -81,7 +81,7 @@ Our solution makes optimal, effective use of Google's ecosystem:
 - **Safety & Harm Reduction:** Deep integration of Google's safety settings (blocking hate speech, harassment, and dangerous content) guarantees a secure, family-friendly civic platform.
 - **Future-Ready Maps:** Architecture is designed with hooks ready for seamless scaling to Google Maps Platform (Places & Directions API) for live precinct routing.
 <img width="1305" height="762" alt="image" src="https://github.com/user-attachments/assets/2053ccea-077d-4de1-b63d-db95923083fa" />
-<img width="1028" height="800" alt="image" src="https://github.com/user-attachments/assets/3e9c2750-4897-4ec5-9bb0-e1c601528aa5" />
+
 
 ---
 
