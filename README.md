@@ -18,6 +18,28 @@ Voter apathy often stems from a lack of clear, localized, and easily digestible 
 
 ## Approach & Logic (Context-Aware Decision Making)
 Aletheia is not just a wrapper around an LLM; it is a **context-aware reasoning engine**:
+
+
+```mermaid
+graph TD
+    A[User Visits Aletheia] --> B{What is the goal?}
+    B -->|Check Deadlines| C[Dashboard: Interactive Timeline]
+    B -->|Find Polling Place| D[Map & Smart Forecast]
+    B -->|Understand Process| E[Voter Checklist]
+    B -->|Ask Complex Query| F[Aletheia AI Assistant]
+    
+    C --> G[Actionable Next Steps]
+    D --> G
+    E --> G
+    F -->|Gemini 1.5 Pro Context| G
+    
+    G --> H((Empowered Voter))
+    
+    style A fill:#fbbf8c,stroke:#1f1b17,stroke-width:2px,color:#1f1b17
+    style F fill:#b9eedb,stroke:#1f1b17,stroke-width:2px,color:#1f1b17
+    style H fill:#a2d6c4,stroke:#1f1b17,stroke-width:3px,color:#1f1b17
+```
+
 - **Dynamic Context Routing:** The assistant inherently understands the temporal context (e.g., "How many days until the election?") and spatial logic, tailoring responses based on the user's progress in the voting checklist.
 - **Smart Forecasting Algorithm:** Utilizes a predictive heuristic engine to recommend the "Best Time to Vote," helping users avoid peak crowd hours and inclement weather, tangibly reducing real-world friction.
 - **Systematic Prompt Engineering:** The AI's persona is governed by robust, non-partisan system instructions, ensuring zero bias and hallucination-free guidance on critical legal and civic matters.
@@ -25,6 +47,25 @@ Aletheia is not just a wrapper around an LLM; it is a **context-aware reasoning 
 ---
 
 ## How the Solution Works
+
+
+### System Architecture & Data Flow
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant UI as React Frontend (Vite)
+    participant C as Local Cache (State)
+    participant G as Google Gemini API
+
+    U->>UI: Enters civic query
+    UI->>C: Retrieve active context & checklist state
+    C-->>UI: Return context
+    UI->>G: Stream prompt + strict system instructions
+    Note over G: Process: Objective & Non-Partisan Rails
+    G-->>UI: Stream Markdown & Actionable steps
+    UI-->>U: Render real-time response
+```
+
 1. **Interactive Dashboard:** Users land on a dynamic "Playful Civic" (neo-brutalist) dashboard that visualizes real-time countdowns, essential deadlines, and a personalized completion checklist.
 2. **Conversational Assistant:** A floating, instantly accessible chat interface powered by **Google Gemini**, capable of handling complex queries, rendering markdown, and maintaining conversation history.
 3. **Actionable Cartography:** Integrated mapping solutions actively pinpoint polling locations, moving beyond static text to provide real-world navigability.
