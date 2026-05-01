@@ -8,7 +8,25 @@ Aletheia is a production-grade, AI-driven civic assistant designed to eliminate 
  
 
 This repository represents the benchmark for **Practical AI Usability**, blending seamless **Google Services** integration with state-of-the-art frontend architecture.
-<img width="619" height="836" alt="image" src="https://github.com/user-attachments/assets/8a2b490a-e218-4c47-af9d-b7f980eee53e" />
+
+---
+
+---
+
+## Quick start
+
+```
+npm install
+npm run dev
+```
+
+Optional environment variable:
+
+```
+VITE_GEMINI_API_KEY=your_key_here
+```
+
+Add your Civic API key, Maps key, and Google Analytics ID in Settings for official lookups, interactive maps, and analytics.
 
 ---
 
@@ -77,11 +95,17 @@ sequenceDiagram
 
 ---
 
-## ☁️ Google Services Integration
-Our solution makes optimal, effective use of Google's ecosystem:
-- **Google Gemini API (Vertex AI Context):** Powers the core intelligence. We utilize advanced `gemini-1.5-pro` logic with streaming responses for zero-latency feedback.
-- **Safety & Harm Reduction:** Deep integration of Google's safety settings (blocking hate speech, harassment, and dangerous content) guarantees a secure, family-friendly civic platform.
-- **Future-Ready Maps:** Architecture is designed with hooks ready for seamless scaling to Google Maps Platform (Places & Directions API) for live precinct routing.
+---
+
+## Google services integration (real and meaningful)
+
+- **Google Gemini API** powers the AI assistant with streaming responses and safety rails. See [src/lib/gemini.js](src/lib/gemini.js).
+- **Google Civic Information API** returns official polling and election administration data. See [src/lib/civic.js](src/lib/civic.js).
+- **Google Maps JS API** renders the interactive polling map (optional key). See [src/components/PollingMap.jsx](src/components/PollingMap.jsx).
+- **Google Analytics 4** optional analytics initialization (local storage configurable). See [src/lib/analytics.js](src/lib/analytics.js).
+- **Google Calendar** deep links and ICS downloads for deadlines. See [src/lib/calendar.js](src/lib/calendar.js).
+
+---
 <img width="1305" height="762" alt="image" src="https://github.com/user-attachments/assets/2053ccea-077d-4de1-b63d-db95923083fa" />
 
 
@@ -105,6 +129,10 @@ Our solution makes optimal, effective use of Google's ecosystem:
 - **Sanitization Pipeline:** All markdown rendered from the AI is strictly sanitized to prevent XSS (Cross-Site Scripting) vulnerabilities.
 - **Objective Rails:** The system prompt aggressively enforces political neutrality. The bot is explicitly instructed to refuse partisan endorsements or speculative polling predictions, acting strictly as a reliable civic educator.
 - **Local-First Privacy:** User checklists and interactions are processed and stored locally. No PII (Personally Identifiable Information) is exfiltrated to external databases.
+- DOMPurify sanitizes AI output.
+- No sensitive PII is requested.
+- API keys are stored locally in the browser.
+- CSP, Referrer-Policy, and Permissions-Policy headers are set for production.
 
 ---
 
@@ -113,12 +141,73 @@ Aletheia is built with a "Design for All" philosophy:
 - **WCAG 2.1 AA Compliant:** Semantic HTML structure, comprehensive ARIA labels, and logical focus-trapping for screen readers.
 - **High-Contrast Neo-Brutalism:** The "Playful Civic" aesthetic isn't just beautiful—it's functional. Thick 3px borders and hard shadows ensure maximum legibility for users with visual impairments.
 - **Responsive Fluidity:** Perfect parity between mobile, tablet, and desktop experiences without breaking layouts or interactive zones.
+- Skip link to jump to main content.
+- Focus-visible outlines for keyboard users.
+- Semantic details/summary accordions for the voting steps.
+- ARIA labels and button states for checklist and state selector.
 
 ---
 
 ## Testing & Validation
 - **Component Isolation:** UI elements are built in pure isolation, allowing for robust unit testing of individual civic widgets (countdowns, progress bars).
 - **Graceful Degradation:** The app handles API failures elegantly, providing users with cached offline information and polite fallback UI states if the LLM is temporarily unavailable.
+
+**Manual verification checklist**
+
+1. Open Settings and verify keys save locally.
+2. Run a Civic lookup and verify results + map list.
+3. Add a reminder to Google Calendar and download .ics.
+4. Send a chat message, refresh, and confirm history persists.
+5. Keyboard test: skip link, accordions, buttons, and inputs.
+
+**Recommended automated tests (if time allows)**
+
+- Unit tests for civic lookup helpers and calendar builders.
+- Component tests for Dashboard, Assistant, and Process Info.
+---
+---
+
+## Performance and efficiency
+
+- Vite builds optimized assets.
+- Streaming responses reduce wait time.
+- Static data arrays for content-heavy sections.
+
+---
+## Project structure
+
+```
+src/
+	App.jsx
+	main.jsx
+	index.css
+	pages/
+		Home.jsx
+		Assistant.jsx
+		ProcessInfo.jsx
+		ElectionEducation.jsx
+		StateInfo.jsx
+		SettingsPage.jsx
+	lib/
+		gemini.js
+		civic.js
+		elections.js
+		education.js
+		profile.js
+		calendar.js
+		analytics.js
+		maps.js
+		googleServices.js
+	components/
+		PollingMap.jsx
+```
+
+---
+
+
+## Official sources and credibility
+
+Aletheia links to authoritative, non-partisan sources such as vote.gov, USA.gov, the EAC, FVAP, and state election offices. It always encourages verification because rules can change.
 
 ---
 
