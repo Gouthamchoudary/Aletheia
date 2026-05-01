@@ -1,9 +1,11 @@
 # Aletheia Civic Navigator
 
 > **Empowering democracy through context-aware AI and inclusive design.**
+
+Aletheia is a production-grade, AI-driven civic assistant designed to eliminate voter friction. Built for the modern citizen, it transforms complex bureaucratic processes into an intuitive, gamified, and highly accessible journey.
 <img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/cab55621-9010-4a1a-85e6-771b9d5db6b6" />
 
-Aletheia is a production-grade, AI-driven civic assistant designed to eliminate voter friction. Built for the modern citizen, it transforms complex bureaucratic processes into an intuitive, gamified, and highly accessible journey. 
+ 
 
 This repository represents the benchmark for **Practical AI Usability**, blending seamless **Google Services** integration with state-of-the-art frontend architecture.
 <img width="619" height="836" alt="image" src="https://github.com/user-attachments/assets/8a2b490a-e218-4c47-af9d-b7f980eee53e" />
