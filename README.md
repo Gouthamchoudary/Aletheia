@@ -3,11 +3,11 @@
 > **Empowering democracy through context-aware AI and inclusive design.**
 
 Aletheia is a production-grade, AI-driven civic assistant designed to eliminate voter friction. Built for the modern citizen, it transforms complex bureaucratic processes into an intuitive, gamified, and highly accessible journey.
-<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/cab55621-9010-4a1a-85e6-771b9d5db6b6" />
-
- 
 
 This repository represents the benchmark for **Practical AI Usability**, blending seamless **Google Services** integration with state-of-the-art frontend architecture.
+
+
+<img width="1910" height="902" alt="image" src="https://github.com/user-attachments/assets/bd2bd993-39b0-4913-9f1e-014ac6353d57" />
 
 ---
 
